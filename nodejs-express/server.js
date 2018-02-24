@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var session = require('express-session');
+var bodyParser = require('body-parser'); // POST 데이터 처리
+var session = require('express-session'); // 세션 관리
 var fs = require('fs');
 
 app.set('views', __dirname + '/views');
