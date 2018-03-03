@@ -3,6 +3,7 @@ import React from 'react';
 class Contacts extends React.Component {
     constructor(props) {
         super(props);
+        // 유동적인 데이터라 가정하여 state 사용
         this.state = {
             contactData: [
                 {name: "Abet", phone: "010-1111-1111"},
@@ -13,6 +14,8 @@ class Contacts extends React.Component {
     }
 
     render() {
+        // key : child 컴포넌트에 identity (독자성) 을 부여
+        // Arrow Function : () => {} ES6에 새로 도입
         return (
             <div>
                 <h1>Contacts</h1>

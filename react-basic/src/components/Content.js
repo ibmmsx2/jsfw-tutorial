@@ -12,6 +12,7 @@ class Content extends React.Component {
     }
 }
 
+// Type 검증(Validate). string type 이며 bodyd의 경우 필수
 Content.propTypes = {
     title: PropTypes.string,
     body: PropTypes.string.isRequired
