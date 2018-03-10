@@ -2,6 +2,28 @@ import React, { Component } from 'react';
 import UserList from './UserList';
 import { Map, List } from 'immutable';
 
+/*
+    LifeCycle API
+
+    컴포넌트 생성 
+        1. constructor : 기본 state 정함
+        2. componentWillMount : 컴포넌트가 DOM 위에 만들어지기 전에 실행
+        3. render : 렌더링
+        4. componentDidMount : JavaScript 프레임워크를 연동하거나, setTimeout, setInterval 및 AJAX 처리 
+
+    컴포넌트 제거
+        1. componentWillUnmount
+
+    컴포넌트 prop 변경
+        1. componentWillReceiveProps : prop 에 따라 state 를 업데이트 해야 할 때 사용하면 유용
+        2. shouldComponentUpdate : prop 혹은 state 가 변경 되었을 때, 리렌더링을 할지 말지 정하는 메소드
+        3. componentWillUpdate
+        4. render
+        5. componentDidUpdate
+
+        cf) 컴포넌트의 state가 변경시는 2번 부터 수행
+*/
+
 class AppImmute extends Component {
     constructor(props) {
         super(props);
