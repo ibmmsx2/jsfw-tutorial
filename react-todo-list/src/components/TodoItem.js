@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import './TodoItem.css';
 
 class TodoItem extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.checked !== nextProps.checked;
+    }
+
     render() {
         const { text, checked, id, onToggle, onRemove } = this.props;
+        console.log(id);
 
         //todo-text css 클래스를 동적으로 선택 : 템플릿 리터럴
         return (
