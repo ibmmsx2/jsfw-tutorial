@@ -46,7 +46,7 @@ class App extends Component {
 
         // 로딩 상태 종료
         this.setState({
-            loading: true
+            loading: false
         });
     }
 
@@ -54,16 +54,14 @@ class App extends Component {
         const { date } = this.state;
 
         const prevDate = moment(date).subtract(1, 'days').format('YYYY-MM-DD');
-        console.log(prevDate);
         this.getAPOD(prevDate);
     }
 
     handleNext = () => {
         const { date, maxDate } = this.state;
-        if (date == maxDate) return;
+        if (date === maxDate) return;
 
         const nextDate = moment(date).add(1, 'days').format('YYYY-MM-DD');
-        console.log(nextDate);
         this.getAPOD(nextDate);
     }
 

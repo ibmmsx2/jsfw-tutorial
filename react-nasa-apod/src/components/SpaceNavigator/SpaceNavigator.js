@@ -15,7 +15,7 @@ const SpaceNavigator = ({ onPrev, onNext }) => {
                 </div>
             </div>
             <div className={cx('right', 'end')}>
-                <div className={cx('circle')} onClick={onPrev}>
+                <div className={cx('circle')} onClick={onNext}>
                     <RightIcon/>
                 </div>
             </div>
