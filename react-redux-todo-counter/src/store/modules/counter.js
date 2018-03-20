@@ -1,3 +1,4 @@
+import { createAction, handleActions } from 'redux-actions';
 /*
 리덕스 매뉴얼에선 액션과 리듀서를 각각 다른 파일에 작성하여 관리하는 것을 알려주는데요,
 그렇게 사용 했을때는, 새 액션을 추가 할 때마다 두개의 파일을 건들여야 한다는점이 불편합니다.
@@ -10,8 +11,14 @@ const DECREMENT = "counter/DECREMENT";
 
 // 액션 함수 생성
 // 이 함수들은 나중에 다른 파일에서 불러와야 하므로 내보내줍니다.
+// case 1
+/*
 export const increment = () => ({ type: INCREMENT });
 export const decrement = () => ({ type: DECREMENT });
+*/
+// case 2
+export const increment = createAction(INCREMENT);
+export const decrement = createAction(DECREMENT);
 
 // 모듈의 초기 상태를 정의합니다.
 const initialState = {
@@ -19,6 +26,9 @@ const initialState = {
 };
 
 // 리듀서를 만들어서 내보내줍니다.
+
+// case 1
+/*
 export default function reducer(state = initialState, action) {
     // 리듀서 함수에서는 액션의 타입에 따라 변화된 상태를 정의하여 반환합니다.
     // state = initialState 이렇게 하면 initialState 가 기본 값으로 사용됩니다.
@@ -31,3 +41,14 @@ export default function reducer(state = initialState, action) {
             return state;
     }
 }
+*/
+
+// case 2
+export default handleActions({
+    [INCREMENT]: (state, action) => {
+        return { number: state.number + 1};
+    },
+    // action 객체를 참조하지 않으니까 이렇게 생략을 할 수도 있겠죠?
+    // state 부분에서 비구조화 할당도 해주어서 코드를 더욱 간소화시켰습니다.
+    [DECREMENT] : ({ number }) => ({ number: number - 1 })
+}, initialState);
