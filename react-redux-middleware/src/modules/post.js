@@ -6,10 +6,19 @@ function getPostAPI(postId) {
     return axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
 }
 
+const GET_POST = 'GET_POST';
 const GET_POST_PENDING = 'GET_POST_PENDING';
 const GET_POST_SUCCESS = 'GET_POST_SUCCESS';
 const GET_POST_FAILURE = 'GET_POST_FAILURE';
 
+/* === store.js in case 3 === */
+export const getPost = (postId) => ({
+    type: GET_POST,
+    payload: getPostAPI(postId)
+})
+
+/* === store.js in case 2 === */
+/*
 export const getPost = (postId) => dispatch => {
     // 먼저, 요청이 시작했다는것을 알립니다
     dispatch({type: GET_POST_PENDING});
@@ -31,6 +40,7 @@ export const getPost = (postId) => dispatch => {
         });
     })
 };
+*/
 
 const initialState = {
     pending: false,

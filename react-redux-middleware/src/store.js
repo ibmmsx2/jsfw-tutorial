@@ -15,7 +15,20 @@ import ReduxThunk from 'redux-thunk';
     https://github.com/evgenyrodionov/redux-logger#options
 */
 
+//const logger = createLogger();
+//const store = createStore(modules, applyMiddleware(logger, ReduxThunk));
+
+/* === case 3=== 
+    프로미스 기반의 비동기 작업을 조금 더 편하게 해주는 미들웨어
+    프로미스가 payload 로 전달되면, 요청이 시작, 성공, 실패 할 때 액션의 뒷부분에
+    _PENDING, _FULFILLED, _REJECTED 를 반환
+    (아래 예제는 접미사의 이름을 커스터마이징함)
+*/
+import promiseMiddleware from 'redux-promise-middleware';
 const logger = createLogger();
-const store = createStore(modules, applyMiddleware(logger, ReduxThunk));
+const customizedPromiseMiddleware = promiseMiddleware({
+    promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILURE']
+})
+const store = createStore(modules, applyMiddleware(logger, ReduxThunk, customizedPromiseMiddleware));
 
 export default store;
