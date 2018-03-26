@@ -17,7 +17,10 @@
 # https://velopert.com/3425
 # yarn add koa
 # yarn add koa-static
+# yarn add ignore-loader --dev
+# yarn add redux react-redux redux-actions redux-pender axios
+# yarn add react-router-server
 
-yarn build
-node server
+yarn build:server
+yarn start:server
 
