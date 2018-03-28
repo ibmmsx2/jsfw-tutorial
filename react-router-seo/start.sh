@@ -6,7 +6,7 @@
 # create-react-app react-router
 # yarn add react-router-dom
 # yarn add cross-env --dev
-# yarn add query-string
+# yarn add query-string@5
 
 #### react-code-split
 # https://velopert.com/3421
@@ -20,6 +20,8 @@
 # yarn add ignore-loader --dev
 # yarn add redux react-redux redux-actions redux-pender axios
 # yarn add react-router-server
+# yarn add serialize-javascript
+# yarn add react-helmet
 
 yarn build:server
 yarn start:server

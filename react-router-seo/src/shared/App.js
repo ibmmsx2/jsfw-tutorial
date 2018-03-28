@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Home, About, Posts, Users } from 'pages';
-//import { Home, About, Posts } from 'pages/index.async.js';
+import { Helmet } from 'react-helmet';
 import Menu from 'components/Menu';
 
 class App extends Component {
@@ -23,6 +23,9 @@ class App extends Component {
         const { SplitMe } = this.state;
         return (
             <div>
+                <Helmet>
+                    <title>React Router & SSR</title>
+                </Helmet>
                 <Menu/>
                 { SplitMe && <SplitMe/> }
                 <button onClick={this.showSplitMe}>ClickMe</button>

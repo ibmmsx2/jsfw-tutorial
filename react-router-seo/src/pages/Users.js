@@ -7,7 +7,7 @@ import { withDone } from 'react-router-server';
 class Users extends Component {
     componentWillMount() {
         // 서버사이드에서도 데이터 로딩이 작동하기 위해서, 데이터 불러오는 작업을 componentWillMount 에서 호출합니다.
-        const { UserActions, data, done } = this.props;
+        const { UsersActions, data, done } = this.props;
         if (data.length !== 0) return false; // 데이터가 이미 존재하면 재요청 하지 않음
         UsersActions.getUsers().then(done, done); // Promise 가 성공했을때, 혹은 실패했을때 done() 호출
     }
