@@ -23,6 +23,7 @@
 # yarn add serialize-javascript
 # yarn add react-helmet
 
+yarn build
 yarn build:server
 yarn start:server
 
