@@ -9,11 +9,14 @@
 #### CentOS 환경
 * node 설치 (node package manager인 npm 만 설치하면 자동)
 ```
-$ yum install npm
+$ sudo yum install npm
 $ node -v
 v0.10.48
 $ npm -v
 1.3.6
+$ sudo npm install -g n
+CERT_UNTRUSTED 오류 발생시
+$sudo npm config set strict-ssl false
 ```
 * node update
   * https://github.com/tj/n, https://velopert.com/1351
@@ -31,16 +34,19 @@ v8.9.4
 * npm update
 ```
 $ sudo npm cache clean -f
-$ sudo /usr/bin/npm install node-gyp
 $ sudo npm install -g npm
 $ sudo mv /usr/bin/npm /usr/bin/npm_org
 $ sudo ln -sf /usr/local/n/versions/node/8.9.4/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
-$ sudo mv /usr/bin/node-gyp /usr/bin/node-gyp_org
-$ sudo ln -sf /usr/local/n/versions/node/8.9.4/lib/node_modules/node-gyp/bin/node-gyp.js /usr/bin/node-gyp
 $ npm -v
-5.6.0
+6.4.1
 $ npm -list
 --- (emtpy)
+```
+* deprecated
+```
+$ sudo /usr/bin/npm install node-gyp
+$ sudo mv /usr/bin/node-gyp /usr/bin/node-gyp_org
+$ sudo ln -sf /usr/local/n/versions/node/8.9.4/lib/node_modules/node-gyp/bin/node-gyp.js /usr/bin/node-gyp
 ```
 
 * yarn install
