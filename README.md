@@ -34,6 +34,9 @@ v8.12.0
 ```
 $ export PATH=$PATH:/usr/local/bin
 $ sudo npm install --global yarn
+```
+* react boiler-plate
+```
 $ sudo yarn global add create-react-app
 $ sudo yarn global list
 $ ls -al /usr/local/bin/
@@ -43,6 +46,31 @@ create-react-app -> ../share/.config/yarn/global/node_modules/create-react-app/i
 $ git checkout http://... my-prj
 $ cd my-prj
 $ yarn install
+```
+* vue boiler-plate
+```
+$ sudo yarn global add @vue/cli
+$ sudo yarn global list
+info "@vue/cli@3.0.5" has binaries:
+   - vue
+$ sudo yarn global bin
+/usr/local/bin
+$ vue --version
+3.0.5
+$ vue create hello
+Vue CLI v3.0.5
+? Please pick a preset: Manually select features
+? Check the features needed for your project: Babel, Router, CSS Pre-processors, Linter
+? Use history mode for router? (Requires proper server setup for index fallback in production) Yes
+? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default): Sass/SCSS
+? Pick a linter / formatter config: Prettier
+? Pick additional lint features: Lint on save
+? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? In dedicated config files
+? Save this as a preset for future projects? No
+...
+...
+$ cd hello
+$ yarn serve
 ```
 * npm update (deprecated, yarn으로 관리할것)
 ```
